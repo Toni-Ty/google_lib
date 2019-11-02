@@ -5,7 +5,7 @@
 
 require 'pry'
 require 'colorize'
-require 'googlebooks'
+# require 'googlebooks'
 
-require_relative "./cli_applicaiton/version"
+require_relative "./cli_application/version"
 require_relative './cli_applicaiton/cli_interface'
