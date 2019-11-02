@@ -8,4 +8,4 @@ require 'colorize'
 # require 'googlebooks'
 
 require_relative "./cli_application/version"
-require_relative './cli_applicaiton/cli_interface'
+require_relative './cli_application/cli_interface'
