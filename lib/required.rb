@@ -1,4 +1,4 @@
-# module VirtualCafe
+# module
 # #   class Error < StandardError; end
 # #   # Your code goes here...
 # end
@@ -7,5 +7,5 @@ require 'pry'
 require 'colorize'
 require 'googlebooks'
 
-require_relative "./google_lib/version"
-require_relative './google_lib/cli_interface'
+require_relative "./cli_applicaiton/version"
+require_relative './cli_applicaiton/cli_interface'
