@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "test/cli/version"
+# require "test/cli/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "test-cli"
-  spec.version       = Test::Cli::VERSION
+  spec.name          = "test_cli"
+  spec.version       = TestCli::VERSION
   spec.authors       = ["'Toni-Ty'"]
-  spec.email         = ["'antonique2479@yahoo.com'"]
+  spec.email         = ["'roundtableeng20133@yahoo.com'"]
 
   spec.summary       = %q{"Digital Book Library"}
   spec.description   = %q{"Allows a user to download and save books to a reading list."}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://TestCli"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -20,8 +20,8 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-    spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://TestCli."
+  spec.metadata["changelog_uri"] = "http://TestCli."
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -39,4 +39,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "pry"
+  # spec.add_development_dependency "googlebooks"
 end
