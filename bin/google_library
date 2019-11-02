@@ -3,5 +3,5 @@
 require_relative '../lib/required'
 
 
-new_cli = GoogleLib::Cli_INTERFACE.new
+new_cli = GoogleLib::CLI_INTERFACE.new
 new_cli.call
