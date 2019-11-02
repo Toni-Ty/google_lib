@@ -7,7 +7,7 @@ require 'pry'
 require 'colorize'
 require 'google_books'
 #
-# results = GoogleBooks::API.search('ruby')
+results = GoogleBooks::API.search('ruby')
 
 
 require_relative "./cli_application/version"

@@ -2,11 +2,18 @@
 #  User Interface and Meu
 class GoogleLib::CLI_INTERFACE
 
-def call
-  puts "Hello Everyone"
-  end
+attr_accessor :author
+
+def initialize
+  @author = author
 end
-books = GoogleBooks::API.search('Douglas Rockford')
-books.each do |book|
-  puts book.author
+
+def call
+  books = GoogleBooks::API.search('Edith Wharton')
+  binding.pry
+  books.each do |book|
+    puts book
+  # puts "Hello Everyone"
+    end
+  end
 end
