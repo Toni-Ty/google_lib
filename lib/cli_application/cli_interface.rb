@@ -6,3 +6,7 @@ def call
   puts "Hello Everyone"
   end
 end
+books = GoogleBooks::API.search('Douglas Rockford')
+books.each do |book|
+  puts book.author
+end
