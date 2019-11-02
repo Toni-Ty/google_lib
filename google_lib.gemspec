@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   if spec.respond_to?(:metadata)
     spec.metadata["allowed_push_host"] = "http://mygemserver.com'"
 
-    spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://GoogleLib."
   spec.metadata["changelog_uri"] = "http://GoogleLib."
   else
