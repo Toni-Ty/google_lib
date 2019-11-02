@@ -5,7 +5,10 @@
 
 require 'pry'
 require 'colorize'
-# require 'googlebooks'
+require 'google_books'
+#
+# results = GoogleBooks::API.search('ruby')
+
 
 require_relative "./cli_application/version"
 require_relative './cli_application/cli_interface'
