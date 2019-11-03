@@ -2,6 +2,9 @@
 #  User Interface and Meu
 class GoogleLib::CLI_INTERFACE
 
+  @@book_results = []
+
+
   def call
     puts "Hello!  Welcome to Google Library, please enter a book topic" .blue
     puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
@@ -15,13 +18,13 @@ class GoogleLib::CLI_INTERFACE
   #gets user input in the form of a category
   def user_input
     @input = gets.strip
-      if @input ==  GoogleBooks::API.search(@input)
-        show_authors
-        show_books
-        show_publisher
-      else
-        puts "please enter a relevant category"
-    end
+       @input ==  GoogleBooks::API.search(@input)
+    #     show_authors
+    #     show_books
+    #     show_publisher
+    #   else
+    #     puts "please enter a relevant category"
+    # end
   end
 
   # returns book authors
