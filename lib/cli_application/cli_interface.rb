@@ -12,6 +12,7 @@ class GoogleLib::CLI_INTERFACE
         show_authors
         show_books
         show_publisher
+        puts "If you would like to save a book to your reading list, please type the name of the book."
   end
 
 
