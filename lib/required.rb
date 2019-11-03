@@ -7,7 +7,7 @@ require 'pry'
 require 'colorize'
 require 'google_books'
 
-query_results = GoogleBooks::API.search('ruby')
+query_results = GoogleBooks::API.search('categories')
 # puts "#{query_results.count}"
 
 
