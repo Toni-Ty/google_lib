@@ -2,7 +2,7 @@
 #  User Interface and Meu
 class GoogleLib::CLI_INTERFACE
 
-  @@book_results = []
+  @@reading_list = []
 
 
   def call
@@ -12,7 +12,7 @@ class GoogleLib::CLI_INTERFACE
         show_authors
         show_books
         show_publisher
-        puts "If you would like to save a book to your reading list, please type the name of the book."
+        save_book
   end
 
 
@@ -39,11 +39,16 @@ class GoogleLib::CLI_INTERFACE
   end
 
     #returns book publishers
-    def show_publisher
-      books = GoogleBooks::API.search(@input, :count => 5)
-      books.each do |book|
-      puts book.publisher
+  def show_publisher
+    books = GoogleBooks::API.search(@input, :count => 5)
+    books.each do |book|
+    puts book.publisher
     end
+  end
+
+  #save book
+  def save_book
+    puts "If you would like to save a book to your reading list, please type the name of the book." .blue
   end
 
 end
