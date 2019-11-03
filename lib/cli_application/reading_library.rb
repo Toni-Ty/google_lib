@@ -12,26 +12,10 @@ class GoogleLib::Google_library
     @@all_books << self
   end
 
-  #returns book authors
-  def show_authors
-    books = GoogleBooks::API.search('cooking')
-    books.each do |book|
-      puts book.authors
-      end
-    end
+  #all saved books
+  def self.all
+    @@all_books
+  end
 
-  #returns book titles
-  def show_books
-    books = GoogleBooks::API.search('cooking')
-    books.each do |book|
-      puts book.titles
-      end
-    end
 
-    #returns book publishers
-    def show_publisher
-      books = GoogleBooks::API.search('cooking')
-      books.each do |book|
-        puts book.publisher
-        end
-      end
+end
