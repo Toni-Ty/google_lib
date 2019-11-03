@@ -1,13 +1,19 @@
-attr_accessor :authors, :titles, :publisher
+class GoogleLib::Google_library
+
+  attr_accessor :authors, :titles, :publisher
+
+  @@all_books = []
+
 
   def initialize
     @authors = authors
     @titles = titles
     @publishers = publisher
+    @@all_books << self
   end
 
   #returns book authors
-  def call
+  def show_authors
     books = GoogleBooks::API.search('cooking')
     books.each do |book|
       puts book.authors
@@ -15,7 +21,7 @@ attr_accessor :authors, :titles, :publisher
     end
 
   #returns book titles
-  def call
+  def show_books
     books = GoogleBooks::API.search('cooking')
     books.each do |book|
       puts book.titles
@@ -23,7 +29,7 @@ attr_accessor :authors, :titles, :publisher
     end
 
     #returns book publishers
-    def call
+    def show_publisher
       books = GoogleBooks::API.search('cooking')
       books.each do |book|
         puts book.publisher
