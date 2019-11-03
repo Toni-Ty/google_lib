@@ -7,9 +7,9 @@ require 'pry'
 require 'colorize'
 require 'google_books'
 
-query_results = GoogleBooks::API.search('categories')
-# puts "#{query_results.count}"
+@input = GoogleBooks::API.search('categories')
 
+#take out reading Library
 
 require_relative "./cli_application/version"
 require_relative './cli_application/cli_interface'
