@@ -48,7 +48,7 @@ end
       # saved_book = @books.find {|book| book.title == book_input }
 
       @books.each do |book|
-         book.title == book_input
+        if book.title == book_input
          saved_book = book_input
       @push_books << saved_book
       # puts "#{@push_books}"
@@ -56,7 +56,7 @@ end
 
   end
 end
-
+end
   #prints reading list
   def print_reading_list
     puts @push_books
