@@ -50,18 +50,34 @@ end
       @books.each do |book|
         if book.title == book_input
          saved_book = book_input
-      @push_books << saved_book
-      # puts "#{@push_books}"
+         @push_books << saved_book
+       end
+    end
 
-
+  def invalid_response
+    puts "Sorry that's an invalid response. Please try again" .blue
+    puts ""
+    call
   end
-end
-end
+
   #prints reading list
   def print_reading_list
     puts @push_books
+    puts "Would you like to enter a new book topic to search?" .blue
+    puts "If so, please type [Y]...Or type [exit] to leave" .blue
+    user_input
+		if @input == "Y"
+			call
+      puts @push_books
+		elsif @input == "exit"
+			puts "Have a great day!".magenta
+			exit
+		else
+			invalid_response
+				end
+			end
+		end
     # binding.pry
-  end
 
   def reset_reading_list
     @push_books.clear
