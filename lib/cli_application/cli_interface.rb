@@ -1,8 +1,13 @@
 # CLI Controller
 #  User Interface and Meu
 class GoogleLib::CLI_INTERFACE
+#   @@reading_list = []
+#
+#   def initialize
+#     @@reading_list << self
+# end
+#
 
-  @@reading_list = []
 
 
   def call
@@ -11,15 +16,13 @@ class GoogleLib::CLI_INTERFACE
         user_input
         get_books
         show_all_books
-        #  get user input for book that they want (ie. "2")
-        #  save that book to their reading list
-
-
-        # show_authors
-        # show_books
-        # show_publisher
-        save_book
+        get_user_selection
+        print_reading_list
   end
+
+  # def self.all
+  #   @@reading_list
+  # end
 
   #gets user input in the form of a category
   def user_input
@@ -31,47 +34,35 @@ class GoogleLib::CLI_INTERFACE
     @books =  GoogleBooks::API.search(@input, :count => 5)
   end
 
-    def show_all_books
-      count = 1
-      @books.each do |book|
-      puts "#{count}. #{book.title}, #{book.authors}, #{book.isbn}"
-      count += 1
-      end
-    end
-
-  # returns book authors
-  def show_authors
-    # books = GoogleBooks::API.search(@input, :count => 5)
-    @books.each do |book|
-    puts book.authors
-    end
+  #returns user input of book selection
+  def show_all_books
+    @books.each  { |book| puts "#{book.title}, #{book.authors}, #{book.publisher}, #{book.isbn}"}
   end
-
-  #returns book titles
-  def show_books
-    @books.each do |book|
-    puts book.title
-    end
-  end
-
-    #returns book publishers
-  def show_publisher
-    @books.each do |book|
-    puts book.publisher
-    end
-  end
-
-  #save book
-  def save_book
-    puts "If you would like to save a book to your reading list, please type the number of the book you'd like to save to your reading list."
-    # grab the user input "2
-    book_input = gets.strip # book_input is the reading list book id
-    book_to_save = @books.find{|book| book.isbn == book_input }
-    binding.pry
-    # book_to_save =  Google_library::Readinglist.find_by_id()
-    # book (that user wants to save) = @books[1]
-    # @@reading_list << book
-    # puts "reading list is #{@@reading_list}"
-  end
-
 end
+
+  #gets book title from user
+    def get_user_selection
+      @push_books = []
+      puts "If you would like to save a book to your reading list, please type the title of the book you'd like to save." .blue
+      book_input = gets.strip
+      # saved_book = @books.find {|book| book.title == book_input }
+
+      @books.each do |book|
+         book.title == book_input
+         saved_book = book_input
+      @push_books << saved_book
+      # puts "#{@push_books}"
+
+
+  end
+end
+
+  #prints reading list
+  def print_reading_list
+    puts @push_books
+    # binding.pry
+  end
+
+  def reset_reading_list
+    @push_books.clear
+  end
