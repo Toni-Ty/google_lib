@@ -1,4 +1,4 @@
-class GoogleLib::CLI_INTERFACE #  User Interface and Menu
+class GoogleLib::CLI_INTERFACE #User Interface and Menu
 
   def call
     puts "Hello!  Welcome to Google Lib, please enter a book topic" .blue
@@ -23,8 +23,8 @@ class GoogleLib::CLI_INTERFACE #  User Interface and Menu
   #returns user book selection
   def show_all_books
     @books.each  { |book| puts "#{book.title}, #{book.authors}, #{book.publisher}"}
+    end
   end
-end
 
   #gets book titles from user
   def get_user_selection
