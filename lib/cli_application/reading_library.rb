@@ -1,7 +1,5 @@
 class GoogleLib::Google_library
 
-
-
     @@reading_list = []
 
     def initialize(options)
