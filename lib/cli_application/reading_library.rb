@@ -1,4 +1,4 @@
-# class GoogleLib::Google_library
+class GoogleLib::Google_library
 #
 #   attr_accessor :authors, :titles, :publisher
 #
@@ -19,3 +19,31 @@
 #
 #
 # end
+
+
+    @@count = 0
+    @@instances = []
+
+    def initialize(options)
+           @@count += 1
+           @@instances << self
+    end
+
+    def self.all
+        @@instances
+    end
+
+    def self.count
+        @@count
+    end
+
+#     def self.count
+#         ObjectSpace.each_object(self).count
+#     end
+#
+#
+#     def self.all
+#         ObjectSpace.each_object(self).to_a
+#     end
+# end
+end
