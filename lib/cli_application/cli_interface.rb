@@ -10,7 +10,7 @@ class GoogleLib::CLI_INTERFACE #  User Interface and Menu
         reading_list_options
   end
 
-  #gets user input in the form of a category
+  #gets user input
   def user_input
     @input = gets.strip
   end
@@ -39,9 +39,8 @@ end
     end
   end
 
-  #option for additional books, reading list, and exit
+  #options for additional books, reading list, and exit
   def reading_list_options
-    # puts @push_books
     puts "Would you like to enter a new book topic to search?" .blue
     puts "If so, please type [Y]...Or type [see list] for your reading list...Or type [exit] to leave" .blue
     user_input
