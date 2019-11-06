@@ -1,8 +1,8 @@
-class GoogleLib::CLI_INTERFACE #  User Interface and Meu
+class GoogleLib::CLI_INTERFACE #  User Interface and Menu
 
   def call
     puts "Hello!  Welcome to Google Lib, please enter a book topic" .blue
-    puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ".blue
+    puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  " .blue
         user_input
         get_books
         show_all_books
@@ -27,14 +27,14 @@ class GoogleLib::CLI_INTERFACE #  User Interface and Meu
 end
 
   #gets book titles from user
-    def get_user_selection
-      puts "If you would like to save a book to your reading list, please type the title of the book you'd like to save." .blue
-      book_input = gets.strip
-      @books.each do |book|
-        if book.title == book_input
-          saved_book = book_input
-          @all_the_books = GoogleLib::Google_library.all
-          @all_the_books << saved_book
+  def get_user_selection
+    puts "If you would like to save a book to your reading list, please type the title of the book you'd like to save." .blue
+    book_input = gets.strip
+    @books.each do |book|
+      if book.title == book_input
+        saved_book = book_input
+        @all_the_books = GoogleLib::Google_library.all
+        @all_the_books << saved_book
       end
     end
   end
@@ -53,5 +53,5 @@ end
       else
   			puts "Have a great day!".magenta
   			exit
-			end
 		end
+end
