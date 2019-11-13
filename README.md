@@ -17,8 +17,11 @@ Or install it yourself as:
 #### Dependencies
 
 ```bundle install``` will run the following dependencies
+
  "bundler", "~> 2.0"
+
  "rake", "~> 10.0"
+
  "google_books", "~> 0.3.18"
 
 #### Gemfile
