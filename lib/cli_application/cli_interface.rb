@@ -5,7 +5,6 @@ class GoogleLib::CLI_INTERFACE
     puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  " .blue
         get_user_input
         search_google_books
-        show_all_books
         show_user_selection
         save_book_title
         reading_list_options
@@ -45,12 +44,12 @@ class GoogleLib::CLI_INTERFACE
   def reading_list_options
     puts "Would you like to enter a new book topic to search?" .blue
     puts "If so, please type [Y]...Or type [see list] for your reading list...Or type [exit] to leave" .blue
-    gets_user_input
+    get_user_input
 		  if @input == "Y"
 			  call
       elsif @input == "see list"
         puts @all_the_books
-        call
+        reading_list_options
       else
   			puts "Have a great day!".magenta
   			exit
