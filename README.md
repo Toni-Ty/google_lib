@@ -14,6 +14,17 @@ Or install it yourself as:
 
 ```$ gem install google_lib```
 
+#### Gemfile
+
+These files set up some tools and gems for our project. Most importantly, make sure to run `bundle` before starting this project so that you have all the required gems.
+
+#### `./bin/google_library`
+
+This is our main executable file and how we will run our program.
+
+#### `spec`
+
+This is the test file and...
 
 ## Usage
 
