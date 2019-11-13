@@ -12,7 +12,7 @@ And then execute:
 
 Or install it yourself as:
 
-```$ gem install google_lib'''
+```$ gem install google_lib```
 
 
 ## Usage
