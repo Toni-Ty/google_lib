@@ -14,6 +14,13 @@ Or install it yourself as:
 
 ```$ gem install google_lib```
 
+#### Dependencies
+
+```bundle install``` will run the following dependencies
+ "bundler", "~> 2.0"
+ "rake", "~> 10.0"
+ "google_books", "~> 0.3.18"
+
 #### Gemfile
 
 These files set up some tools and gems for our project. Most importantly, make sure to run `bundle` before starting this project so that you have all the required gems.
