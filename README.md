@@ -22,7 +22,7 @@ These files set up some tools and gems for our project. Most importantly, make s
 
 This is our main executable file and how we will run our program.
 
-#### `spec`
+#### spec
 
 This is the test file and...
 
