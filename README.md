@@ -4,15 +4,15 @@
 
 Add this line to your application's Gemfile:
 
-gem 'google_lib'
+```gem 'google_lib'```
 
 And then execute:
 
-$ bundle
+```$ bundle```
 
 Or install it yourself as:
 
-$ gem install google_lib
+```$ gem install google_lib'''
 
 
 ## Usage
