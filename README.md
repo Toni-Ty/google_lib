@@ -1,6 +1,6 @@
 # Google_Lib Gem
 
-##Installation
+Installation
 
 Add this line to your application's Gemfile:
 
