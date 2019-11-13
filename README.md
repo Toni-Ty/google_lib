@@ -16,7 +16,7 @@ Or install it yourself as:
 
 #### Dependencies
 
-```bundle install``` will run the following dependencies
+```bundle install```  or ```bundle``` will run the following dependencies
 
  "bundler", "~> 2.0"
 
