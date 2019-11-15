@@ -44,14 +44,14 @@ class GoogleLib::CLI_INTERFACE
     puts "Would you like to enter a new book topic to search?" .blue
     puts "If so, please type [Y]...Or type [see list] for your reading list...Or type [exit] to leave" .blue
     get_user_input(@input)
-		if @input == "Y" || @input == "y"
-		  call
+    if @input == "Y" || @input == "y"
+      call
     elsif @input == "see list"
       puts GoogleLib::Google_library.all
       reading_list_options
     elsif @input == "exit"
-  		puts "Have a great day!".magenta
-  		exit
+      puts "Have a great day!".magenta
+      exit
     else
       puts "I'm sorry please enter a valid response".blue
       reading_list_options
