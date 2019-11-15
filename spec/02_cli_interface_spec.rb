@@ -19,7 +19,7 @@ end
   it 'loops while user input is not equal to exit'
     new_cli = GoogleLib::CLI_INTERFACE.new
 
-    expect(new_cli).to receive(:gets).and_return("get_user_book_input(input)","search_google_books(input)","..exit")
+    expect(new_cli).to receive(:gets).and_return("get_user_book_input(input)","return_user_books(input)","..exit")
     new_cli.call
   end
 
@@ -31,13 +31,14 @@ describe '#get_user_book_input' do
   end
 end
 
-  describe '#search_google_books' do
+  describe '#return_user_books' do
     it 'receives user input, searches for books in Google Books, and returns title, author, and publisher'
       new_cli = GoogleLib::CLI_INTERFACE.new
 
       expect("boats").to eq.and_return("Boat Book", "Gail Gibbons", "Holiday House")
   end
 end
+
   describe '#save_book_title' do
     it 'saves users book title selections'
       new_cli = GoogleLib::CLI_INTERFACE.new
@@ -48,7 +49,8 @@ end
       expect(@input("Boat Book")).to eq.(book.title)
   end
 end
-  describe '#reading_list_options' do
+
+  describe '#user_menu_options' do
     it 'allows user to enter a new book search, see reading list, or exit'
     new_cli = GoogleLib::CLI_INTERFACE.new
 

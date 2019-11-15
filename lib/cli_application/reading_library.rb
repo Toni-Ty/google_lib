@@ -6,7 +6,6 @@ class GoogleLib::Google_library
     @@reading_list << self
   end
 
-
   def self.all
     @@reading_list
   end
