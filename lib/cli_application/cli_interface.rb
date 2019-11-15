@@ -55,6 +55,6 @@ class GoogleLib::CLI_INTERFACE
       else
         puts "I'm sorry please enter a valid response".blue
         reading_list_options
-		end
+  		end
+    end
   end
-end
