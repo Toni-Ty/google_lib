@@ -32,7 +32,7 @@ To run this project from the root directory use the command below.  This is the 
 
 #### Gemfile
 
-These files set up some tools and gems for our project. Most importantly, make sure to run `bundle` before starting this project so that you have all the required gems.
+These files set up tools and gems for the project. Most importantly, make sure to run `bundle` before starting this project so that you have all the required gems.
 
 #### Spec
 
