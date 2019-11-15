@@ -26,6 +26,8 @@ To run this project from the root directory please use the command below.  This 
 
  "rake", "~> 10.0"
 
+ "colorize", "~> 0.8.1"
+
  "google_books", "~> 0.2.2"
 
 #### Gemfile
