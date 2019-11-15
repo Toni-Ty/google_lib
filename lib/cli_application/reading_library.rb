@@ -9,5 +9,5 @@ class GoogleLib::Google_library
 
   def self.all
     @@reading_list
-    end
+  end
 end
