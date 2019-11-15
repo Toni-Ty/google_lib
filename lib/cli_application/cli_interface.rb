@@ -6,14 +6,14 @@ class GoogleLib::CLI_INTERFACE
     puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  " .blue
     input = nil
     while @input != "exit"
-    get_user_input(input)
+    get_user_book_input(input)
     search_google_books(input)
     save_book_title
     reading_list_options
     end
   end
 
-  def get_user_input(input)
+  def get_user_book_input(input)
     @input = gets.strip
   end
 
@@ -29,7 +29,7 @@ class GoogleLib::CLI_INTERFACE
 
   def save_book_title
     puts "If you would like to save a book to your reading list, please type the title of the book you'd like to save." .blue
-    get_user_input(@input)
+    get_user_book_input(@input)
     book_input = @input
     if book_to_save = @books.find{|book| book.title == book_input }
       GoogleLib::Google_library.all << book_input
@@ -43,7 +43,7 @@ class GoogleLib::CLI_INTERFACE
   def reading_list_options
     puts "Would you like to enter a new book topic to search?" .blue
     puts "If so, please type [Y]...Or type [see list] for your reading list...Or type [exit] to leave" .blue
-    get_user_input(@input)
+    get_user_book_input(@input)
     if @input == "Y" || @input == "y"
       call
     elsif @input == "see list"

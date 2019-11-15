@@ -4,7 +4,7 @@ describe 'CLI Interface' do
     new_cli.call
 
     expect(GoogleLib::CLI_INTERFACE).to receive(:new).and_return(cli_interface)
-    expect(cli_interface).to receive(:gets).and_return("get_user_input"(input))
+    expect(cli_interface).to receive(:gets).and_return("get_user_book_input"(input))
   end
 
 describe '#call' do
@@ -19,7 +19,7 @@ end
   it 'loops while user input is not equal to exit'
     new_cli = GoogleLib::CLI_INTERFACE.new
 
-    expect(new_cli).to receive(:gets).and_return("get_user_input(input)","search_google_books(input)","..exit")
+    expect(new_cli).to receive(:gets).and_return("get_user_book_input(input)","search_google_books(input)","..exit")
     new_cli.call
   end
 
