@@ -58,7 +58,7 @@ end
     expect($stdout).to receive(:puts).and_return("If so, please type [Y]...Or type [see list] for your reading list...Or type [exit] to leave.")
 
     expect(@input("Y")).to eq.and_return("Hello!  Welcome to Google Lib, please enter a book topic")
-    expect(@input("see list")).to eq.and_return("Boat Book", "")
+    expect(@input("see list")).to eq.and_return("Boat Book", "Boats Board Book", "Building Strip-Planked Boats")
     expect(@input("exit")).to eq.and_return("exit")
     expect(@input("xyzzzz")).to eq.and_return("Im sorry please enter a valid response")
     end
