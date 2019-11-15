@@ -23,7 +23,7 @@ end
     new_cli.call
   end
 
-describe '#get_user_input' do
+describe '#get_user_book_input' do
   it 'receives user input via the gets method and sets it equal to an instance variable called input' do
     new_cli = GoogleLib::CLI_INTERFACE.new
 
