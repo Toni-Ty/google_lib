@@ -21,8 +21,8 @@ class GoogleLib::CLI_INTERFACE
   def search_google_books(input)
     @books =  GoogleBooks::API.search(@input, :count => 5)
     @books.each do |book|
-    if !(book.title.nil? || book.authors.nil? || book.publisher.nil?)
-      puts book.title, book.authors, book.publisher, "\n"
+      if !(book.title.nil? || book.authors.nil? || book.publisher.nil?)
+        puts book.title, book.authors, book.publisher, "\n"
     end
   end
 
@@ -31,10 +31,10 @@ class GoogleLib::CLI_INTERFACE
     puts "If you would like to save a book to your reading list, please type the title of the book you'd like to save." .blue
       get_user_input(@input)
       book_input = @input
-      if book_to_save = @books.find{|book| book.title == book_input }
-        GoogleLib::Google_library.all << book_input
-      else
-        puts "Please enter a valid title"
+        if book_to_save = @books.find{|book| book.title == book_input }
+          GoogleLib::Google_library.all << book_input
+        else
+          puts "Please enter a valid title"
         save_book_title
       end
     end
@@ -58,4 +58,3 @@ class GoogleLib::CLI_INTERFACE
       end
     end
   end
-  		
