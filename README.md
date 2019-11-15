@@ -14,6 +14,10 @@ Or install it yourself as:
 
 ```$ gem install google_lib```
 
+To run this project from the root directory please use the command above.  This is our main executable file and how we will run our program.
+
+#### `ruby ./bin/google_library`
+
 #### Dependencies
 
 ```bundle install```  or ```bundle``` will run the following dependencies
@@ -22,19 +26,15 @@ Or install it yourself as:
 
  "rake", "~> 10.0"
 
- "google_books", "~> 0.3.18"
+ "google_books", "~> 0.2.2"
 
 #### Gemfile
 
 These files set up some tools and gems for our project. Most importantly, make sure to run `bundle` before starting this project so that you have all the required gems.
 
-#### `./bin/google_library`
-
-This is our main executable file and how we will run our program.
-
 #### Spec
 
-This is the test file and...
+This is the test file for this project.
 
 ## Usage
 
