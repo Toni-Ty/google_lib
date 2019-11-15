@@ -14,7 +14,7 @@ Or install it yourself as:
 
 ```$ gem install google_lib```
 
-To run this project from the root directory please use the command above.  This is our main executable file and how we will run our program.
+To run this project from the root directory please use the command below.  This is our main executable file and how we will run our program.
 
 #### `ruby ./bin/google_library`
 
