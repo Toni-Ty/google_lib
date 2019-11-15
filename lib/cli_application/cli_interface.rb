@@ -36,6 +36,7 @@ class GoogleLib::CLI_INTERFACE
       else
         puts "Please enter a valid title"
         save_book_title
+      end
     end
   end
 
