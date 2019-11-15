@@ -36,9 +36,8 @@ class GoogleLib::CLI_INTERFACE
       else
         puts "Please enter a valid title"
         save_book_title
-      end
     end
-end
+  end
 
   def reading_list_options
     puts "Would you like to enter a new book topic to search?" .blue
