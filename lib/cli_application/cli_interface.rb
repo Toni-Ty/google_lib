@@ -1,57 +1,67 @@
 class GoogleLib::CLI_INTERFACE
 
+
   def call
     puts "Hello!  Welcome to Google Lib, please enter a book topic" .blue
     puts "      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  " .blue
-        get_user_input
-        search_google_books
-        show_user_selection
+        input = nil
+        while @input != "exit"
+        get_user_input(input)
+        search_google_books(input)
         save_book_title
         reading_list_options
   end
+end
 
-  def get_user_input
-    @input = gets.strip
+  def get_user_input(input)
+     @input = gets.strip
   end
 
-  def search_google_books
-  # def get_books
+  #returns 5 books only if books contain title, author, and publisher
+  def search_google_books(input)
     @books =  GoogleBooks::API.search(@input, :count => 5)
-  end
-
-  #returns user book selection
-  # def show_all_books
-  def show_user_selection
-    @books.each  { |book| puts "#{book.title}, #{book.authors}, #{book.publisher}"}
-    end
-  end
-
-  #gets book titles from user
-  # def get_user_selection
-  def save_book_title
-    puts "If you would like to save a book to your reading list, please type the title of the book you'd like to save." .blue
-    book_input = gets.strip
     @books.each do |book|
-      if book.title == book_input
-        saved_book = book_input
-        @all_the_books = GoogleLib::Google_library.all
-        @all_the_books << saved_book
+    if !(book.title.nil? || book.authors.nil? || book.publisher.nil?)
+    # @title = book.title, @authors = book.authors, @publisher = book.publisher
+    puts book.title, book.authors, book.publisher, "\n"
+    # puts "#{book.title}, #{book.authors}, #{book.publisher}"
+
       end
     end
-  end
 
-  #options for additional books, reading list, and exit
+
+  def save_book_title
+    puts "If you would like to save a book to your reading list, please type the title of the book you'd like to save." .blue
+      get_user_input(@input)
+      book_input = @input
+      if book_to_save = @books.find{|book| book.title == book_input }
+      # @books.each do |book|
+      # if book_input == book.title
+        GoogleLib::Google_library.all << book_input
+      else
+        puts "Please enter a valid title"
+        save_book_title
+      end
+    end
+end
+
+
+  #options for adding more books to reading list, seeing list, and exit
   def reading_list_options
     puts "Would you like to enter a new book topic to search?" .blue
     puts "If so, please type [Y]...Or type [see list] for your reading list...Or type [exit] to leave" .blue
-    get_user_input
-		  if @input == "Y"
+    get_user_input(@input)
+		  if @input == "Y" || @input == "y"
 			  call
       elsif @input == "see list"
-        puts @all_the_books
+        puts GoogleLib::Google_library.all
         reading_list_options
-      else
+      elsif @input == "exit"
   			puts "Have a great day!".magenta
   			exit
+      else
+        puts "I'm sorry please enter a valid response".blue
+        reading_list_options
 		end
+  end
 end
